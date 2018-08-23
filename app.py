@@ -8,7 +8,7 @@ from celery import Celery
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'top-secret!'
+app.config.from_object(os.environ['APP_SETTINGS'])
 
 # Flask-Mail configuration
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
