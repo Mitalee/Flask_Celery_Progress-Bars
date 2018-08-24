@@ -1,4 +1,4 @@
-Pulled Miguel Grinberg's Tutorial on Flask with Celery and deployed the same with redis on a single free tier dyno on Heroku.
+I wasn't able to find a single resource for hosting a small Async task queue MVP, so I pulled Miguel Grinberg's Tutorial on Flask with Celery and deployed the same with redis on a single free tier dyno on Heroku.
 
 Note: heroku requires credit card verification for allowing the Heroku Redis add-on to be configured on the free dyno.
 
