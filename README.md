@@ -1,6 +1,18 @@
 
 I wasn't able to find a single, all-in-one resource for hosting a small Async task queue implementation (backend worker with frontend progress bar) on Heroku, so I pulled [Miguel Grinberg's Tutorial for a Celery based Progress Bar on Flask](https://blog.miguelgrinberg.com/post/using-celery-with-flask), and deployed the same with redis on a single free tier dyno on Heroku.
 
+Steps on Local:
+`
+export APP_SETTINGS="config.DevelopmentConfig"
+`
+
+```bash
+python app.py
+celery worker -A app.celery --loglevel=info
+./run-redis.sh
+```
+
+Steps for Heroku:
 Note: Heroku requires credit card verification for allowing the Heroku Redis add-on to be configured on the free dyno.
 
 Modify the Procfile accordingly and make sure the celery worker is switched on in the 'Resources' Tab on the Heroku dashboard.
