@@ -16,8 +16,8 @@ class ProductionConfig(Config):
 class StagingConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
-    CELERY_BROKER_URL = os.environ['CELERY_BROKER_URL']
-    CELERY_RESULT_BACKEND = os.environ['CELERY_RESULT_BACKEND']
+    CELERY_BROKER_URL = 'redis://localhost:6379/0' #os.environ['CELERY_BROKER_URL']
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0' #os.environ['CELERY_RESULT_BACKEND']
 
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
